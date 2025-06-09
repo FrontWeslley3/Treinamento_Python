@@ -10,21 +10,35 @@
 # 4. Execute o código e veja se a saída está correta (abra o terminal, execute o comando python > arquivo).
 
 # Definição de variáveis
-nome = '???'  # Nome do usuário (string)
-idade = '???'  # Idade do usuário (int)
-altura = '???'  # Altura do usuário (float)
-peso = '???'  # Peso do usuário (float)
+nome = 'Weslley'  # Nome do usuário (string)
+idade = 28  # Idade do usuário (int)
+altura = 1.85  # Altura do usuário (float)
+peso = 87.5  # Peso do usuário (float)
 
 # Cálculo do IMC (Índice de Massa Corporal)
 imc = peso / (altura ** 2)
 
+if imc < 18.5:
+  classificacao = "abaixo do peso"
+elif imc >= 18.5 and imc <= 24.9:
+    classificacao = "Peso normal"
+else:
+    classificacao = "Sobrepeso"
+
+# Perguntar a comida favorita do usuário
+comida_favorita = input("Qual é a sua comida favorita? ")
+
+
 # Mensagem formatada usando f-string
-mensagem = f"Olá, {'???'}! Você tem {'???'} anos, mede {'???'}m e pesa {'???'}kg."
-mensagem_imc = f"Seu IMC é {'???':.2f}."
+mensagem = f"Olá, {nome}! Você tem {idade} anos, mede {altura}m e pesa {peso}kg."
+mensagem_imc = f"Seu IMC é {imc:.2f}.  O que significa que você está {classificacao}."
+
 
 # Exibir resultados
 print(mensagem)
 print(mensagem_imc)
+print(f"E é muito bom saber que sua comida favorita é {comida_favorita}!")
+
 
 # Desafio extra:
 # 1. Modifique o programa para classificar o IMC como "Abaixo do peso", "Peso normal" ou "Sobrepeso".
