@@ -19,3 +19,40 @@
 # Exemplo do input: saldo_bancario = float(input("Digite o seu saldo bancario: "))
 
 # ✏️ Comece seu código abaixo:
+
+# Peça ao usuário para inserir o preço unitário do produto (Feito)
+preco_unitario = float(input("Digite o Preço do Produto: "))
+
+# Peça ao usuário para inserir a quantidade desejada
+quantidade = int(input("Quantidade Desejada: "))
+
+# Pergunte se o cliente é VIP (responder com "sim" ou "nao")  (Feito)
+vip = input("Você é VIP? (sim/não): ")
+
+# Calcula o valor total inicial sem desconto  (Feito)
+valor_total = preco_unitario * quantidade
+
+# Verifica se a quantidade comprada é maior que 10 para aplicar 10% de desconto   (Feito)
+if quantidade > 10:
+    desconto = valor_total * 0.10
+    valor_total -= desconto
+
+    # Se o cliente for VIP, aplica mais 5% de desconto   (Feito)
+    if vip == "sim":
+        desconto_vip = valor_total * 0.05
+        valor_total -= desconto_vip
+
+# Mostra o valor final a pagar (com ou sem desconto)  (Feito)
+print("Valor final a pagar: R$ {:.2f}".format(valor_total))
+
+
+
+
+
+
+
+
+
+
+
+

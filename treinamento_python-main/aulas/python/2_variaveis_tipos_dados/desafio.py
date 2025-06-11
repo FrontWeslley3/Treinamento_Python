@@ -18,12 +18,20 @@ peso = 87.5  # Peso do usuário (float)
 # Cálculo do IMC (Índice de Massa Corporal)
 imc = peso / (altura ** 2)
 
+# Verifica a classificação do IMC (Índice de Massa Corporal) com base no valor calculado:
+
 if imc < 18.5:
-  classificacao = "abaixo do peso"
+    # Se o IMC for menor que 18.5, significa que a pessoa está abaixo do peso ideal
+    classificacao = "abaixo do peso"
+
 elif imc >= 18.5 and imc <= 24.9:
+    # Se o IMC estiver entre 18.5 e 24.9 (inclusive), a pessoa está com peso normal
     classificacao = "Peso normal"
+
 else:
+    # Se o IMC for maior que 24.9, a pessoa está com sobrepeso
     classificacao = "Sobrepeso"
+
 
 # Perguntar a comida favorita do usuário
 comida_favorita = input("Qual é a sua comida favorita? ")
