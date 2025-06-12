@@ -19,3 +19,12 @@
 # - Converta a entrada para inteiro antes de calcular a tabuada.
 
 # ✏️ Comece seu código abaixo:
+
+while True:
+  numero = int(input("Digite um número inteiro: "))
+  for i in range(1, 11):
+    print(f"{numero} x {i} = {numero * i} ")
+
+  continuar = input("Deseja gerar outra tabuada? (sim/não): ") 
+  if continuar == "sair":
+    break 
