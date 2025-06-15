@@ -22,3 +22,33 @@
 # - Use `while` para repetir até que o usuário deseje sair.
 
 # ✏️ Comece seu código abaixo:
+
+# Função para adicionar uma nota
+def adicionar_nota(titulo, conteudo):
+  with open("notas.txt", "a") as arquivo:
+    arquivo.write(f"{titulo}: {conteudo}\n")
+
+# Função para visualizar notas
+def visualizar_notas():
+  with open("notas.txt", "r") as arquivo:
+    notas = arquivo.readlines()
+    for nota in notas:
+      print(nota.strip())
+
+# Loop principal
+while True:
+  print("1. Adicionar nota")
+  print("2. Visualizar notas")
+  print("3. Sair")
+  escolha = input("Escolha uma opção: ")
+  if escolha == "1":
+    titulo = input("Digite o título da nota: ")
+    conteudo = input("Digite o conteúdo da nota: ")
+    adicionar_nota(titulo, conteudo)
+  elif escolha == "2":
+    visualizar_notas()
+  elif escolha == "3":
+    break
+  else:
+    print("Opção inválida. Tente novamente.")
+

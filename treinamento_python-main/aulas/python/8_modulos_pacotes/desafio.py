@@ -26,3 +26,39 @@
 # - Trate possíveis erros, como estado não encontrado ou falha na conexão.
 
 # ✏️ Comece seu código abaixo:
+
+import requests
+import json
+
+def consultar_estado(estado):
+  url = f"https://servicodados.ibge.gov.br/api/v1/localidades/estados/{estado}"
+  response = requests.get(url)
+
+  if response.status_code == 200:
+    dados = response.json()
+    if isinstance(dados, list):
+      if len(dados) > 0:
+        for estado in dados:
+          print(f"nome: {estado['nome']}")
+          print(f"sigla: {estado['sigla']}")
+          print(f"regiao: {estado['regiao']['nome']}")
+      else:
+        print("Nenhum estado encontrado com esse nome ou sigla.")
+    else:
+      print(f"nome: {dados['nome']}")
+      print(f"sigla: {dados['sigla']}")
+      print(f"regiao: {dados['regiao']['nome']}")
+  else:
+    print(f"O estado '{estado}' não foi encontrado. Por favor, verifique o nome ou sigla do estado e tente novamente.")
+
+while True:
+  estado = input("Digite o nome ou sigla do estado:")
+
+  if estado.lower() == "sair":
+    break
+
+  consultar_estado(estado)
+
+  continuar = input("Deseja consultar outro estado? (sim/não):")
+  if continuar.lower() == "não":
+    break

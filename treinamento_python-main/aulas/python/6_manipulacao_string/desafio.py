@@ -22,3 +22,31 @@
 # - Use `while` para repetir até que o usuário deseje sair.
 
 # ✏️ Comece seu código abaixo:
+
+def analisar_texto(texto):
+  palavras = texto.split()
+  quantidade_palavras = len(palavras)
+
+  quantidade_caracteres = len(texto.replace(" ", ""))
+
+  palavra_mais_longa = max(palavras, key = len)
+
+  print(f"Quantidade de palavras: {quantidade_palavras}")
+  print(f"Quantidade de caracteres: {quantidade_caracteres}")
+  print(f"Palavra mais longa: {palavra_mais_longa}")
+
+  return
+
+while True:
+  texto = input("Digite um texto:")
+
+  if texto.lower() == "sair":
+    break
+
+  analisar_texto(texto)
+
+
+  continuar = input("Deseja analiar outro texto? (sim/não):")
+  if continuar.lower() == "não":
+    break
+
